@@ -88,7 +88,7 @@ function CommentsForm({ slug }) {
         >
           Post Comment
         </button>
-        {showSuccessMessage && <span className="text-xl font-semibold mt-3 text-green-500">Comment submitted for review.</span>}
+        {showSuccessMessage && <span className="text-sm font-semibold mt-3 ml-4 text-green-500">Comment submitted for review.</span>}
       </div>
     </div>
   )
