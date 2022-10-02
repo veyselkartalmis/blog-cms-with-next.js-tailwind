@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import React, { useState, useEffect } from 'react';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
-import { FeaturedPostCard } from "../components";
-import { getFeaturedPosts } from "../services";
+import { FeaturedPostCard } from '../components';
+import { getFeaturedPosts } from '../services';
 
 const responsive = {
     superLargeDesktop: {
@@ -21,10 +21,10 @@ const responsive = {
     mobile: {
         breakpoint: { max: 640, min: 0 },
         items: 1,
-    }
-}
+    },
+};
 
-function FeaturedPost() {
+const FeaturedPosts = () => {
     const [featuredPosts, setFeaturedPosts] = useState([]);
     const [dataLoaded, setDataLoaded] = useState(false);
 
@@ -32,7 +32,7 @@ function FeaturedPost() {
         getFeaturedPosts().then((result) => {
             setFeaturedPosts(result);
             setDataLoaded(true);
-        })
+        });
     }, []);
 
     const customLeftArrow = (
@@ -59,7 +59,7 @@ function FeaturedPost() {
                 ))}
             </Carousel>
         </div>
-    )
-}
+    );
+};
 
-export default FeaturedPost;
+export default FeaturedPosts;
